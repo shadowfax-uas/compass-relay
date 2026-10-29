@@ -1,0 +1,26 @@
+[Unit]
+Description=H.264 UDP MPEG-TS relay to Compass
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=compass-relay
+Group=compass-relay
+EnvironmentFile=-/etc/compass-relay/relay.env
+Environment=GST_REGISTRY=/var/cache/compass-relay/registry.bin
+CacheDirectory=compass-relay
+ExecStart=/usr/local/lib/compass-relay/relay.sh
+Restart=always
+RestartSec=5
+RestartPreventExitStatus=64 69 78
+KillSignal=SIGINT
+TimeoutStopSec=10
+NoNewPrivileges=true
+ProtectHome=true
+PrivateTmp=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
