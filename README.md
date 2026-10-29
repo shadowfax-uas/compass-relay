@@ -1,4 +1,4 @@
-# Push to Compass — Ubuntu 24.04 deployment
+# Compass-Relay — Ubuntu 24.04 deployment
 
 This folder packages the fixed relay exercised on a Raspberry Pi 5, 8 GB,
 running Ubuntu 24.04. Its job is to receive **H.264 video inside MPEG-TS over
